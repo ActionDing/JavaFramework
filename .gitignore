@@ -1,0 +1,6 @@
+# Project exclude paths
+/out/
+/Spring-0/target/
+/Spring-3-web/target/
+/SpringMVC-0/target/
+/SpringMVC-1-web/target/
