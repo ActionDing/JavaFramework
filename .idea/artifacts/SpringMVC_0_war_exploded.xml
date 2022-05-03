@@ -1,13 +1,36 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="SpringMVC-0:war exploded">
-    <output-path>$PROJECT_DIR$/out/artifacts/SpringMVC_0_war_exploded</output-path>
+    <output-path>$PROJECT_DIR$/SpringMVC-0/target/SpringMVC-0</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <exploded>true</exploded>
+        <module>SpringMVC-0</module>
+        <packaging>war</packaging>
+        <unpackNestedArchives>false</unpackNestedArchives>
+      </options>
+    </properties>
     <root id="root">
-      <element id="javaee-facet-resources" facet="SpringMVC-0/web/Web" />
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="SpringMVC-0" />
         </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:5.3.19" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-aop:5.3.19" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-beans:5.3.19" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-core:5.3.19" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-jcl:5.3.19" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-expression:5.3.19" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-web:5.3.19" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-context:5.3.6" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-aspects:5.3.19" />
+          <element id="library" level="project" name="Maven: org.aspectj:aspectjweaver:1.9.9.1" />
+        </element>
       </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/SpringMVC-0/target/SpringMVC-0/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="SpringMVC-0/web/Web" />
     </root>
   </artifact>
 </component>

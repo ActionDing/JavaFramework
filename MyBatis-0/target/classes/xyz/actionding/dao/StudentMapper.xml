@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="xyz.actionding.dao.StudentDao">
+    <!--parameterType可省略-->
+    <insert id="insertStudent" parameterType="xyz.actionding.bean.Student">
+        INSERT INTO t_student(name,age,score) VALUES (#{name},#{age},#{score});
+        <selectKey resultType="int" keyProperty="id" order="AFTER">
+            SELECT @@identity
+        </selectKey>
+    </insert>
+
+    <delete id="deleteStudent">
+        delete from t_student where id=#{id};
+    </delete>
+
+    <update id="updateStudent">
+        update t_student set name=#{name}, age=#{age}, score=#{score} where id=#{id};
+    </update>
+
+    <select id="selectAllStudents" resultType="student">
+        select id,name,age,score from t_student;
+    </select>
+
+    <select id="selectStudentById" resultType="student">
+        select id,name,age,score from t_student where id=#{id};
+    </select>
+
+<!-- 需要注意的是，这里面的’%’ #{name} ‘%’之间是没有+号的，即这里的字符串拼接不需要+号，而是需要空格。-->
+    <select id="selectStudentByName" resultType="student">
+        select id,name,age,score from t_student where name like '%' #{name} '%';
+    </select>
+
+</mapper>

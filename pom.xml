@@ -14,11 +14,23 @@
         <module>Spring-2-anno</module>
         <module>Spring-3-web</module>
         <module>Spring-4-transaction</module>
-        <module>SpringMVC-0</module>
         <module>SpringMVC-1-web</module>
+        <module>SpringMVC-0</module>
+        <module>MyBatis-0</module>
     </modules>
 
     <dependencies>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>5.3.19</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>4.0.1</version>
+            <scope>provided</scope>
+        </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>

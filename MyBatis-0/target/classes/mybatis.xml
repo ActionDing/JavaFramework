@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <!--注册配置文件-->
+    <properties resource="db.properties"/>
+
+    <!--别名配置-->
+    <typeAliases>
+        <package name="xyz.actionding.bean"/>
+    </typeAliases>
+
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="${jdbc.driver}"/>
+                <property name="url" value="${jdbc.url}"/>
+                <property name="username" value="${jdbc.user}"/>
+                <property name="password" value="${jdbc.password}"/>
+<!--                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>-->
+<!--                <property name="url" value="jdbc:mysql://127.0.0.1:3306/mybatis-0?useSSL=false"/>-->
+<!--                <property name="username" value="root"/>-->
+<!--                <property name="password" value="ding"/>-->
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+<!--        <mapper resource="mapper/StudentMapper.xml"/>-->
+        <mapper resource="xyz/actionding/dao/StudentMapper.xml"/>
+    </mappers>
+
+
+</configuration>
